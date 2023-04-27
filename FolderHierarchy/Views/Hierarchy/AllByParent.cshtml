@@ -1,0 +1,20 @@
+﻿@model HierarchyModel
+
+@{
+    ViewData["Title"] = "Hierarchy";
+}
+
+<div>
+    <h2 style="font-weight: bold">"Folder" - @(Model.Parent == "" ? "Root" : Model.Parent)</h2>
+
+    <table>
+        @foreach (var el in Model.Relations ?? throw new ArgumentNullException("Hierarchy relations List is null!"))
+        {
+            <tr>
+                <td>
+                    <a style="font-weight: bold" asp-controller="Hierarchy" asp-action="AllByParent" asp-route-parent="@el.Children">@el.Children</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

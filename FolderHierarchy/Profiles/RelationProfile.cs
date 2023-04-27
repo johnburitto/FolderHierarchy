@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FolderHierarchy.Dtos;
-using FolderHierarchy.Models;
+using FolderHierarchy.Entities;
 
 namespace FolderHierarchy.Profiles
 {

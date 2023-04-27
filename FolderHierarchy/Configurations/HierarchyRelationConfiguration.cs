@@ -1,4 +1,4 @@
-﻿using FolderHierarchy.Models;
+﻿using FolderHierarchy.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

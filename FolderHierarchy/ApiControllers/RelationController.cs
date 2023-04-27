@@ -1,5 +1,5 @@
 ﻿using FolderHierarchy.Dtos;
-using FolderHierarchy.Models;
+using FolderHierarchy.Entities;
 using FolderHierarchy.Services;
 using Microsoft.AspNetCore.Mvc;
 

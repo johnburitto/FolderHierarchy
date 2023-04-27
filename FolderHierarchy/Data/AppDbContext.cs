@@ -1,5 +1,5 @@
 ﻿using FolderHierarchy.Configurations;
-using FolderHierarchy.Models;
+using FolderHierarchy.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FolderHierarchy.Data

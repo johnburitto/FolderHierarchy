@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using FolderHierarchy.Data;
 using FolderHierarchy.Dtos;
-using FolderHierarchy.Models;
+using FolderHierarchy.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FolderHierarchy.Services

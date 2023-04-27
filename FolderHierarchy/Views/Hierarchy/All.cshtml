@@ -1,0 +1,14 @@
+﻿@model HierarchyModel
+
+@{
+    ViewData["Title"] = "Hierarchy";
+}
+
+<table>
+    @foreach (var el in Model.Relations ?? throw new ArgumentNullException("Hierarchy relations List is null!"))
+    {
+        <tr>
+            <td>@el.Parent -> @el.Children</td>
+        </tr>
+    }
+</table>
