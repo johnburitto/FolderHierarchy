@@ -39,5 +39,13 @@ namespace FolderHierarchy.ApiControllers
         {
             return Ok(await _service.GetAllByParentAsync(parent ?? ""));
         }
+
+        [HttpPost("from-drive")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> LoadFromDriveAsync([FromBody] AddFromDriveDto dto)
+        {
+            return Ok(await _service.LoadFromDriveAsync(dto));
+        }
     }
 }
