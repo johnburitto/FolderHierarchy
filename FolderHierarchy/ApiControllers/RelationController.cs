@@ -47,5 +47,21 @@ namespace FolderHierarchy.ApiControllers
         {
             return Ok(await _service.LoadFromDriveAsync(dto));
         }
+
+        [HttpGet("export/{fileName}")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> ExportToFileAsync(string fileName)
+        {
+            return Ok(await _service.ExportToFile(fileName));
+        }
+
+        [HttpGet("import/{fileName}")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> ImportFromFileAsync(string fileName)
+        {
+            return Ok(await _service.ImportFromFile(fileName));
+        }
     }
 }

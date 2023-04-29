@@ -3,6 +3,7 @@ using FolderHierarchy.Data;
 using FolderHierarchy.Dtos;
 using FolderHierarchy.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace FolderHierarchy.Services
 {
@@ -84,6 +85,39 @@ namespace FolderHierarchy.Services
             }
 
             return "Finished";
+        }
+
+        public async Task<string> ExportToFile(string fileName)
+        {
+            var results = await GetAllAsync();
+            StringBuilder dbDump = new StringBuilder();
+
+            foreach (var el in results)
+            {
+                dbDump.Append($"{el.Parent}->{el.Children}\n");
+            }
+
+            File.WriteAllText($"{fileName}.txt", dbDump.ToString());
+
+            return "Successfully exported";
+        }
+
+        public async Task<string> ImportFromFile(string fileName)
+        {
+            var directories = File.ReadAllText($"{fileName}.txt").Split("\n");
+
+            for (int i = 0; i < directories.Length - 1; i++)
+            {
+                var relation = directories[i].Split("->");
+
+                var res = await CreateAsync(new RelationCreateDto
+                {
+                    Parent = relation[0],
+                    Children = relation[1],
+                });
+            }
+
+            return "Successfully imported";
         }
     }
 }
