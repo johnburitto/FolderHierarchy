@@ -3,7 +3,21 @@
 }
 
 <div>
-    <a asp-controller="Hierarchy" asp-action="All">Show all hierarchy relations</a>
-    <br>
-    <a asp-controller="Hierarchy" asp-action="AllByParent" asp-route-parent="">Show all hierarchy relations by Parent</a>
+    <table>
+        <tr>
+            <td>
+                <a asp-controller="Hierarchy" asp-action="All">Show all hierarchy relations</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-controller="Hierarchy" asp-action="AllByParent" asp-route-parent="">Show all hierarchy relations by Parent</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-controller="Hierarchy" asp-action="LoadFromDrive" asp-route-parent="">Load hierarchy from drive</a>
+            </td>
+        </tr>
+    </table>
 </div>

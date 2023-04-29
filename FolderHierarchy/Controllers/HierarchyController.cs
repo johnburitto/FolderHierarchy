@@ -1,5 +1,4 @@
-﻿using FolderHierarchy.Entities;
-using FolderHierarchy.Models;
+﻿using FolderHierarchy.Models;
 using FolderHierarchy.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +7,12 @@ namespace FolderHierarchy.Controllers
     public class HierarchyController : Controller
     {
         private readonly RelationService _service;
+        private readonly ILogger<HierarchyController> _logger;
 
-        public HierarchyController(RelationService service)
+        public HierarchyController(RelationService service, ILogger<HierarchyController> logger)
         {
             _service = service ?? throw new ArgumentNullException(typeof(RelationService).ToString());
+            _logger = logger ?? throw new ArgumentNullException(typeof(ILogger).ToString());
         }
 
         public IActionResult Index()
@@ -37,6 +38,22 @@ namespace FolderHierarchy.Controllers
                     Relations = await _service.GetAllByParentAsync(parent ?? "")
                 }
             );
+        }
+
+        public IActionResult LoadFromDrive()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> LoadFromDriveAction(OneFieldModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _logger.LogInformation(await _service.LoadFromDriveAsync(new() { Path = model.Data }));
+            }
+
+            return Redirect("/");
         }
     }
 }
