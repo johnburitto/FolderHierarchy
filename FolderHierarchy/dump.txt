@@ -53,3 +53,61 @@ D->Андрій
 ІФТКН->Фізика(лаби)
 ІФТКН->Фізра
 ІФТКН->Фінансова грамотність та розробка стартапів
+Games->BlueStacks X
+Games->BlueStacks_nxt
+Games->Borderlands3
+Games->DyingLight
+Games->Steam
+AndroidLabs->AndroidTrivia
+AndroidLabs->DessertClicker
+AndroidLabs->DevBytes
+AndroidLabs->DiceRoller
+AndroidLabs->MarsRealEstate
+AndroidLabs->MaterialComponentsShine
+AndroidLabs->RecyclerViewFundamentals
+AndroidLabs->RecycleViewExample
+AndroidLabs->TipCalculator
+AndroidLabs->TrackMySleepQuality
+AndroidLabs->Unscramble
+AndroidLabs->WaterMe
+AndroidLabs->WorkManager
+Lego->10360 - Atari® 2600
+Game Backups->BioWare
+Game Backups->Shadow of War
+FolderHierarchy->ApiControllers
+FolderHierarchy->bin
+FolderHierarchy->Configurations
+FolderHierarchy->Controllers
+FolderHierarchy->Data
+FolderHierarchy->Dtos
+FolderHierarchy->Entities
+FolderHierarchy->Models
+FolderHierarchy->obj
+FolderHierarchy->Profiles
+FolderHierarchy->Properties
+FolderHierarchy->Services
+FolderHierarchy->Views
+FolderHierarchy->wwwroot
+ТЮФ->Задача 12
+ТЮФ->Задача 13
+ТЮФ->Задача 7
+Steam->appcache
+Steam->bin
+Steam->clientui
+Steam->config
+Steam->controller_base
+Steam->depotcache
+Steam->dumps
+Steam->friends
+Steam->graphics
+Steam->logs
+Steam->music
+Steam->package
+Steam->public
+Steam->resource
+Steam->servers
+Steam->steam
+Steam->steamapps
+Steam->steamui
+Steam->tenfoot
+Steam->userdata

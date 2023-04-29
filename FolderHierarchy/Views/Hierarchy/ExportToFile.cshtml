@@ -1,0 +1,13 @@
+﻿@model OneFieldModel
+
+@{
+    ViewData["Title"] = "Hierarchy";
+}
+
+<form method="post" asp-controller="Hierarchy" asp-action="ExportToFileAction">
+    <label asp-for="Data">Enter file name</label>
+    <input asp-for="Data" />
+    <span asp-validation-for="Data"></span>
+
+    <input type="submit" value="Export" />
+</form>

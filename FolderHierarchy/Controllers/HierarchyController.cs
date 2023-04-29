@@ -55,5 +55,37 @@ namespace FolderHierarchy.Controllers
 
             return Redirect("/");
         }
+
+        public IActionResult ExportToFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExportToFileAction(OneFieldModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _logger.LogInformation(await _service.ExportToFileAsync(model.Data));
+            }
+
+            return Redirect("/");
+        }
+
+        public IActionResult ImportFromFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ImportFromFileAction(OneFieldModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _logger.LogInformation(await _service.ImportFromFileAsync(model.Data));
+            }
+
+            return Redirect("/");
+        }
     }
 }

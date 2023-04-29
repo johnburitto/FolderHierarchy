@@ -87,7 +87,7 @@ namespace FolderHierarchy.Services
             return "Finished";
         }
 
-        public async Task<string> ExportToFile(string fileName)
+        public async Task<string> ExportToFileAsync(string fileName)
         {
             var results = await GetAllAsync();
             StringBuilder dbDump = new StringBuilder();
@@ -102,7 +102,7 @@ namespace FolderHierarchy.Services
             return "Successfully exported";
         }
 
-        public async Task<string> ImportFromFile(string fileName)
+        public async Task<string> ImportFromFileAsync(string fileName)
         {
             var directories = File.ReadAllText($"{fileName}.txt").Split("\n");
 
